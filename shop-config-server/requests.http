@@ -1,0 +1,9 @@
+### Get properties for shop application & default profile
+GET http://localhost:8071/shop/default
+
+
+### Notify server that properties has been changed and must be propagated to clients
+POST http://localhost:8071/monitor/
+Content-Type: application/json
+
+{}

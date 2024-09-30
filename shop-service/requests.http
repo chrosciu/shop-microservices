@@ -1,0 +1,10 @@
+### Force all properties reload
+POST http://localhost:8080/actuator/refresh
+
+
+### Get shop info
+GET http://localhost:8080
+
+
+### Get shop hello message
+GET localhost:8080/hello

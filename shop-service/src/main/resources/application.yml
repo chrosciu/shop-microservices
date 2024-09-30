@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: "shop"
+  config:
+    import: "configserver:http://localhost:8071/"
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: "http://localhost:8761/eureka/"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.cloud.config: TRACE
+    org.springframework.cloud: TRACE
+    org.springframework.cloud.bus: TRACE
+    org.springframework.amqp: TRACE
+    org.springframework.amqp.rabbit: TRACE
+    org.springframework.messaging: TRACE
+    org.springframework.integration: TRACE
+
