@@ -7,7 +7,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
 @EnableConfigServer
-@Slf4j
 public class ShopConfigServerApplication {
 
     public static void main(String[] args) {

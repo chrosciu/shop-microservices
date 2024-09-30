@@ -1,6 +1,10 @@
 # Wprowadzenie
 
-Jest to wersja Config Servera mająca pokazać najprostszy setup propertiesów - składowanych zarówno na dysku (profil `native`) jak też w repozytorium Git (profil `git`)
+Jest to wersja Config Server-a mająca pokazać najprostszy setup propertiesów - składowanych zarówno na dysku (profil `native`) jak też w repozytorium Git (profil `git`)
+
+# Postawowa konfiguracja
+
+Aby uruchomić Config Server dodajemy zależność `spring-cloud-config-server` i adnotację `@EnableConfigServer`
 
 # Składowanie na dysku - profil `native`
 

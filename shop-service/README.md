@@ -32,3 +32,17 @@ Dzięki temu zostanie na nowo wczytana zawartość pola `shopName` - używamy bo
 
 [https://github.com/spring-cloud/spring-cloud-commons/issues/846](https://github.com/spring-cloud/spring-cloud-commons/issues/846)
 
+# Komunikacja z `greeting-service` za pomocą `FeignClient`
+
+Bycie zarejestrowanym w Discovery Server-ze umożliwia nam komunikację pomiędzy mikroserwisami bez potrzeby używania zahardcodowanych adresów IP. 
+
+Wykorzystamy zatem ten fakt do komunikacji z `greeting-service`.
+
+Aby było to możliwe należy:
+- w obu serwisach dodać zależność `spring-cloud-starter-netflix-eureka-client` 
+- oraz dodać kilka podstawowych propertiesów (skopiowanych bezpośrednio z dokumentacji) by dało się połączyć z Eureka Server-em
+- dodatkowo w `shop-service`:
+    - dodajemy zależność do `spring-cloud-starter-openfeign` i adnotację `@EnableFeignClients`
+    - definiujemy interfejs `GreetingClient` będący Feign-ową przekładką do `shop-service` - od tej pory można go wstrzykiwać jako beana 
+
+**WAŻNE !!** Nazwa podane w adnotacji `@FeignClient` w interfejsie `GreetingClient` (czyli `greeting`) musi zgadzać się z property `spring.application.name` w `greeting-service`    
